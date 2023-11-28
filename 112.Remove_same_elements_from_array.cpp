@@ -14,7 +14,7 @@ void ReverseArray(vector<int>&v){
     }
     int x = n - s.size();
     for(int i=0;i<x;i++){
-        cout<<"0 ";
+        cout<<"0 "; 
     }
 }
 int main(){
