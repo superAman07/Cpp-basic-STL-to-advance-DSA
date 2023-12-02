@@ -1,24 +1,21 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <set>
+#include<iostream>
 using namespace std;
-void ReverseArray(vector<int>&v){
-    int n=v.size();
-    set<int>s;
-    for(int i=0;i<n;i++){
-        s.insert(v[i]);
-    }
-    for(auto it = s.begin();it!=s.end();++it){
-        cout<<*it<<" ";
-    }
-    int x = n - s.size();
-    for(int i=0;i<x;i++){
-        cout<<"0 "; 
-    }
-}
 int main(){
-    vector<int>v{10,20,20,30,30,30,30};
-    ReverseArray(v);
+    int arr[]{10,20,20,30,30,30,30};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int x=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]!=arr[i+1]){
+            x++;
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]==arr[i+1]){
+            swap(arr[i+1],arr[i+2]);
+        }
+    }
+    for(int i=0;i<x;i++){
+        cout<<arr[i]<<" ";
+    } 
     return 0;
 }
