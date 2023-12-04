@@ -93,7 +93,7 @@ int main(){
     for(int x:v){
         cout<<x<<" ";
     }
-    cout<<"\n"<<"increasing size more with default value 277\n";
+    cout<<"\n"<<"Increasing size more with default value 277\n";
     v.resize(7,277);
     for(auto x:v){
         cout<<x<<" ";
