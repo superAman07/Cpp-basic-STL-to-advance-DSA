@@ -8,7 +8,7 @@ int main(){
     vector<int>v {10,20,30,40,70};
     vector<int>::iterator i=v.begin();
     cout<<(*i)<<"\n";
-    i=i+1;
+    i++;
     cout<<(*i)<<"\n";
     i=v.end();
     i--;
