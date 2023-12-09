@@ -63,19 +63,19 @@
 
    // same program using class
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// class revers{
-//     revers(int arr[],int n){
-//         vector<int>v(arr,arr+n);
-//         for(auto it=v.rbegin();it!=v.rend();it++){
-//             cout<<*it<<" ";
-//         }
-//     }
-// };
-// int main(){
-//     int arr[]{7,27,28};
-//     int n=sizeof(arr)/sizeof(arr[0]);
-//     revers r(*arr,n);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+class revers{
+    revers(int arr[],int n){
+        vector<int>v(arr,arr+n);
+        for(auto it=v.rbegin();it!=v.rend();it++){
+            cout<<*it<<" ";
+        }
+    }
+};
+int main(){
+    int arr[]{7,27,28};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    revers r(*arr,n);
+    return 0;
+}
