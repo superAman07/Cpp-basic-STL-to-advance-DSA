@@ -63,7 +63,9 @@
 
    // same program using class
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 class revers{
     revers(int arr[],int n){
