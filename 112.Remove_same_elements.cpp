@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 int main(){
     int arr[]{10,20,20,30,30,30,30};
     int n=sizeof(arr)/sizeof(arr[0]);
