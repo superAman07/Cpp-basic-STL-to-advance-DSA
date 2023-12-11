@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<bits/stdc++.h>
 using namespace std;
 int main(){
     int arr[]{10,1,7};
