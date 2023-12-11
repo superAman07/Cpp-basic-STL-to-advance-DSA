@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string>
+#include<bits/stdc++.h>
 using namespace std;
+
 void getString(string &str, string curr,int i){
     if( i==str.length()){
         cout<<curr<<" ";
