@@ -13,17 +13,19 @@
 
 // array
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main(){
-//     int arr[]{23,14,16,29,37};
-//     // fill(arr,arr+5,7);  // 7 7 7 7 7
-//     fill(arr+2,arr+5-1,7);  // 23 14 7 7 37
-//     for(int i=0;i<5;i++){
-//         cout<<arr[i]<<" ";
-//     }
-//     return 0;
-// }
+#include<bits/stdc++.h>
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int arr[]{23,14,16,29,37};
+    // fill(arr,arr+5,7);  // 7 7 7 7 7
+    fill(arr+2,arr+5-1,7);  // 23 14 7 7 37
+    for(int i=0;i<5;i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
 
    // list
 
@@ -41,12 +43,12 @@
 
    // string
 
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    string s={"hello Vegeta"};
-    // fill(s.begin(),s.end(),'G'); //  GGGGGGGGGGGG
-    fill(s.begin()+6,s.end(),'G');// hello GGGGGG
-    cout<<s<<"\n";
-    return 0;
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     string s={"hello Vegeta"};
+//     // fill(s.begin(),s.end(),'G'); //  GGGGGGGGGGGG
+//     fill(s.begin()+6,s.end(),'G');// hello GGGGGG
+//     cout<<s<<"\n";
+//     return 0;
+// }
