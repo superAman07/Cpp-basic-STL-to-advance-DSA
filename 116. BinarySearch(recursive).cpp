@@ -6,7 +6,7 @@ using namespace std;
 
 int cnt = 0;
 string BinarySearchRecursive(vector<int>&v,int low,int high,int x){
-  int mid = low + (low + high)/2;
+  int mid = (low + high)/2;
   if(v[mid]==x){
     cout<<"At index "<<cnt;
     return " Found\n";
