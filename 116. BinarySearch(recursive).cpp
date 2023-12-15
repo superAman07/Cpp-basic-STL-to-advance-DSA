@@ -12,10 +12,10 @@ string BinarySearchRecursive(vector<int>&v,int low,int high,int x){
     return " Found\n";
   }
   else if(v[mid]<x){
-    BinarySearchRecursive(vector<int>&v, mid+1,high,x);
+   return BinarySearchRecursive(vector<int>&v, mid+1,high,x);
   }
   else{
-    BinarySearchRecursive(vector<int>&v,high,mid-1,x);
+    return BinarySearchRecursive(vector<int>&v,high,mid-1,x);
   }
   return " Not Found";
 }
