@@ -1,25 +1,25 @@
-// #include<bits/stdc++.h>
-// using namespace std;
-// void prevoiusGreater(vector<int>&arr){
-//     int n=arr.size();
-//     for(int i=0;i<n;i++){
-//         int j;
-//          for(int j=i-1;j>=0;j--){
-//             if(arr[j]>arr[i]){
-//                 cout<<arr[j]<<" ";
-//                 break;
-//             }
-//          }
-//          if(j==-1){
-//             cout<<"-1 ";
-//          }
-//     }
-// }
-// int main(){
-//     vector<int>arr{15,10,18,12,4,6,2,8};
-//     prevoiusGreater(arr);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+void prevoiusGreater(vector<int>&arr){
+    int n=arr.size();
+    for(int i=0;i<n;i++){
+        int j;
+         for(int j=i-1;j>=0;j--){
+            if(arr[j]>arr[i]){
+                cout<<arr[j]<<" ";
+                break;
+            }
+         }
+         if(j==-1){
+            cout<<"-1 ";
+         }
+    }
+}
+int main(){
+    vector<int>arr{15,10,18,12,4,6,2,8};
+    prevoiusGreater(arr);
+    return 0;
+}
 
 
 // best solution
