@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-multimap<int,string>mp;
-void add(int price,string name){
-    mp.insert({price,name});
-}
-// void find(int price){
-//     for(auto it=mp.find(price);it!=mp.upper_bound(price);it++){
-//         cout<<(*it).second<<" "<<(*it).first<<"\n";
-//     }    
+// multimap<int,string>mp;
+// void add(int price,string name){
+//     mp.insert({price,name});
 // }
+void find(int price){
+    for(auto it=mp.find(price);it!=mp.upper_bound(price);it++){
+        cout<<(*it).second<<" "<<(*it).first<<"\n";
+    }    
+}
 void find(int price){
     auto ip=mp.equal_range(price);
     for(auto it=ip.first;it!=ip.second;it++){
