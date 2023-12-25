@@ -14,17 +14,17 @@
 
   // In array
 
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
-// int main(){
-//     int arr[]{2,13,52,137,60,8,9,20};
-//     auto it=max_element(arr,arr+8);
-//     cout<<"Max Element is:"<<*it<<"\n";
-//     it=min_element(arr,arr+8);
-//     cout<<"Min Element is:"<<*it<<"\n";
-//     return 0;
-// }
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int arr[]{2,13,52,137,60,8,9,20};
+    auto it=max_element(arr,arr+8);
+    cout<<"Max Element is:"<<*it<<"\n";
+    it=min_element(arr,arr+8);
+    cout<<"Min Element is:"<<*it<<"\n";
+    return 0;
+}
 
 #include<iostream>
 #include<vector>
