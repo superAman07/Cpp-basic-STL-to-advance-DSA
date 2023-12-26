@@ -1,17 +1,17 @@
-// #include<iostream>
-// #include<deque>
-// using namespace std;
-// int main(){
-//     deque<int>dq{10,17,27};
-//     dq.push_front(5);
-//     dq.push_back(28);
-//     for(auto x:dq){
-//         cout<<x<<" ";
-//     }
-//     cout<<endl;
-//     cout<<dq.front()<<" "<<dq.back();
-//     return 0;
-// }
+#include<iostream>
+#include<deque>
+using namespace std;
+int main(){
+    deque<int>dq{10,17,27};
+    dq.push_front(5);
+    dq.push_back(28);
+    for(auto x:dq){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+    cout<<dq.front()<<" "<<dq.back();
+    return 0;
+}
 
 #include<bits/stdc++.h>
 using namespace std;
