@@ -1,25 +1,25 @@
-// #include<bits/stdc++.h>
-// using namespace std;
-// void Spanning(vector<int>&v){
-//     int n=v.size();
-//     for(int i=0;i<n;i++){
-//         int count=1;
-//         for(int j=i-1;j>=0;j--){                      // O(n^2)
-//             if(v[j]<=v[i]){
-//                 count++;
-//             }
-//             else{
-//                 break;
-//             }
-//         }
-//         cout<<count<<" ";
-//     }
-// }
-// int main(){
-//     vector<int>v{15,13,12,14,16,8,6,4,10,30};
-//     Spanning(v);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+void Spanning(vector<int>&v){
+    int n=v.size();
+    for(int i=0;i<n;i++){
+        int count=1;
+        for(int j=i-1;j>=0;j--){                      // O(n^2)
+            if(v[j]<=v[i]){
+                count++;
+            }
+            else{
+                break;
+            }
+        }
+        cout<<count<<" ";
+    }
+}
+int main(){
+    vector<int>v{15,13,12,14,16,8,6,4,10,30};
+    Spanning(v);
+    return 0;
+}
 
      // Efficient solution
     
