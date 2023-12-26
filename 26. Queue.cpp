@@ -1,15 +1,15 @@
-// #include<iostream>
-// #include<queue>
-// int main(){
-//     std::queue<int>q;
-//     q.push(10);
-//     q.push(17);
-//     q.push(27);
-//     std::cout<<q.front()<<" "<<q.back();
-//     q.pop();
-//     std::cout<<"\n"<<q.front()<<" "<<q.back();
-//     return 0;
-// }
+#include<iostream>
+#include<queue>
+int main(){
+    std::queue<int>q;
+    q.push(10);
+    q.push(17);
+    q.push(27);
+    std::cout<<q.front()<<" "<<q.back();
+    q.pop();
+    std::cout<<"\n"<<q.front()<<" "<<q.back();
+    return 0;
+}
 
 // queue traversing
 
