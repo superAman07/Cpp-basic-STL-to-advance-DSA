@@ -21,32 +21,32 @@ int main(){
 
       // with the help of Dequeue
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// void printMax(int arr[],int n,int k){
-//     deque<int>dq;
-//     for(int i=0;i<k;i++){
-//         while(!dq.empty() && arr[i]>=arr[dq.back()]){
-//             dq.pop_back();
-//         }
-//         dq.push_back();
-//     }
-//     for(int i=0;i<n;i++){
-//         cout<<arr[dq.front()];
-//         while(!dq.empty() && dq.front()<=n-k){
-//             dq.pop_front();
-//         }
-//         while(!dq.empty() && arr[i]>=arr[dq.back()]){
-//             dq.pop_back();
-//         }
-//         dq.push_back();
-//     }
-//     cout<<arr[dq.front()]<<" ";
-// }
-// int main(){
-//     int n=7;
-//     int arr[]{10,8,5,12,15,7,6};
-//     int k=3;
-//     printMax(arr,n,k);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+void printMax(int arr[],int n,int k){
+    deque<int>dq;
+    for(int i=0;i<k;i++){
+        while(!dq.empty() && arr[i]>=arr[dq.back()]){
+            dq.pop_back();
+        }
+        dq.push_back();
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[dq.front()];
+        while(!dq.empty() && dq.front()<=n-k){
+            dq.pop_front();
+        }
+        while(!dq.empty() && arr[i]>=arr[dq.back()]){
+            dq.pop_back();
+        }
+        dq.push_back();
+    }
+    cout<<arr[dq.front()]<<" ";
+}
+int main(){
+    int n=7;
+    int arr[]{10,8,5,12,15,7,6};
+    int k=3;
+    printMax(arr,n,k);
+    return 0;
+}
