@@ -20,29 +20,29 @@ int main(){
 
     // using Vector
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// void cmpare(pair<int,int>p1,pair<int,int>p2);
-// void rank_using_vector(int marks[],int rollno[],int n){
-//     vector<pair<int,int>>v;
-//     for(int i=0;i<n;i++){
-//         v.push_back({rollno[i],marks[i]});
-//     }
-//     sort(v.begin(),v.end(),cmpare);
-//     for(auto x:v){
-//         cout<<x.first<<" "<<x.second<<"\n";
-//     }
-// }
-// void cmpare(pair<int,int>p1,pair<int,int>p2){
-//     return p1.second>p2.second;
-// }
-// int main(){
-//     int n=5;
-//     int marks[]{70,80,40,90};
-//     int rollno[]{101,108,103,105};
-//     rank_using_vector(marks,rollno,n);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+void cmpare(pair<int,int>p1,pair<int,int>p2);
+void rank_using_vector(int marks[],int rollno[],int n){
+    vector<pair<int,int>>v;
+    for(int i=0;i<n;i++){
+        v.push_back({rollno[i],marks[i]});
+    }
+    sort(v.begin(),v.end(),cmpare);
+    for(auto x:v){
+        cout<<x.first<<" "<<x.second<<"\n";
+    }
+}
+void cmpare(pair<int,int>p1,pair<int,int>p2){
+    return p1.second>p2.second;
+}
+int main(){
+    int n=5;
+    int marks[]{70,80,40,90};
+    int rollno[]{101,108,103,105};
+    rank_using_vector(marks,rollno,n);
+    return 0;
+}
 
     // another way 
 
