@@ -30,19 +30,19 @@
 
      // Lower_bound and upper_bound
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main(){
-//     multimap<int,int>mp;
-//     mp.insert({10,137});
-//     mp.insert({30,157});
-//     mp.insert({80,132});
-//     mp.insert({30,937});
-//     auto it1=mp.lower_bound(30);//multiset<int,int>::iterator it1;
-//     auto it2=mp.upper_bound(30);
-//     cout<<it1->first<<" "<<(*it2).first<<"\n";
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    multimap<int,int>mp;
+    mp.insert({10,137});
+    mp.insert({30,157});
+    mp.insert({80,132});
+    mp.insert({30,937});
+    auto it1=mp.lower_bound(30);//multiset<int,int>::iterator it1;
+    auto it2=mp.upper_bound(30);
+    cout<<it1->first<<" "<<(*it2).first<<"\n";
+    return 0;
+}
 
      // equal_range
 
