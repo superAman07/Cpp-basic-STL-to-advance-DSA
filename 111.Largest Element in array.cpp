@@ -3,7 +3,7 @@ using namespace std;
 int main(){
     int arr[]{5,8,20,10};
     make_heap(arr,arr+4);
-    cout<<arr[0];
+    cout<<arr[0]<<"\n";
     return 0;
 }
 
