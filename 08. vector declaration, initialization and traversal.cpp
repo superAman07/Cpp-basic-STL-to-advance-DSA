@@ -13,16 +13,16 @@ int main(){
     return 0;
 }
 
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// int main(){
-//     vector<int>v{10,17,27};
-//     for(int &x:v){
-//         cout<<x<<" ";
-//     }
-//     return 0;
-// }
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>v{10,17,27};
+    for(int &x:v){
+        cout<<x<<" ";
+    }
+    return 0;
+}
 
 // #include<iostream>
 // #include<vector>
