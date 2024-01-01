@@ -1,17 +1,17 @@
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// int main(){
-//     vector<int>v;
-//     v.push_back(10);
-//     v.push_back(17);
-//     v.push_back(27);
-//     for(int i=0;i<v.size();i++){
-//        // cout<<v[i]<<" "; // it doesn't do array index out of bound (in this example if cout<<v[3 or more]) checking
-//        cout<<v.at(i)<<" ";  // it does.......
-//     }
-//     return 0;
-// }
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>v;
+    v.push_back(10);
+    v.push_back(17);
+    v.push_back(27);
+    for(int i=0;i<v.size();i++){
+       // cout<<v[i]<<" "; // it doesn't do array index out of bound (in this example if cout<<v[3 or more]) checking
+       cout<<v.at(i)<<" ";  // it does.......
+    }
+    return 0;
+}
 
 // #include<iostream>
 // #include<vector>
