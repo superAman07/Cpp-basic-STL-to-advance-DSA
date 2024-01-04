@@ -52,17 +52,17 @@ int main(){
 
 // internal working of tail recursion
 
-// #include<iostream>
-// using namespace std;
-// void fun(int n){
-//     start:                             
-//     if(n==0)return;
-//     cout<<n<<" ";
-//     // fun(n-1);
-//     n=n-1;  // when we call function recursively it does the changes that we want and goto start (thats the basic working)
-//     goto start;
-// }
-// int main(){
-//     fun(5);
-//     return 0;
-// }
+#include<iostream>
+using namespace std;
+void fun(int n){
+    start:                             
+    if(n==0)return;
+    cout<<n<<" ";
+    // fun(n-1);
+    n=n-1;  // when we call function recursively it does the changes that we want and goto start (thats the basic working)
+    goto start;
+}
+int main(){
+    fun(5);
+    return 0;
+}
