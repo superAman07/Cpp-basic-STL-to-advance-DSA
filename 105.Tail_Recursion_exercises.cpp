@@ -27,17 +27,17 @@ int main(){
 
 
 //example of tail recursion
-// #include<iostream>
-// using namespace std;
-// void fun(int n){
-//     if(n==0)return;
-//     cout<<n<<" ";
-//     fun(n-1);
-// }
-// int main(){
-//     fun(5);
-//     return 0;
-// }
+#include<iostream>
+using namespace std;
+void fun(int n){
+    if(n==0)return;
+    cout<<n<<" ";
+    fun(n-1);
+}
+int main(){
+    fun(5);
+    return 0;
+}
 #include<iostream>
 using namespace std;
 int fact(int n,int k){
