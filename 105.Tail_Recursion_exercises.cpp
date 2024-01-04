@@ -1,16 +1,16 @@
 //this is not the example of tail recursion
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// void fun(int n){
-//     if(n==0)return;
-//     fun(n-1); 
-//     cout<<n<<" ";
-// }
-// int main(){
-//     fun(5);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+void fun(int n){
+    if(n==0)return;
+    fun(n-1); 
+    cout<<n<<" ";
+}
+int main(){
+    fun(5);
+    return 0;
+}
 // //o/p:- 1 2 3 4 5
 
 // #include<iostream>
