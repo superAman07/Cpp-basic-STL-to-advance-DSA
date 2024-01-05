@@ -1,6 +1,7 @@
       // lower_bound
 
 #include<iostream>
+#include<algorithm>
 #include<set>
 #include<bits/stdc++.h>
 using namespace std;
