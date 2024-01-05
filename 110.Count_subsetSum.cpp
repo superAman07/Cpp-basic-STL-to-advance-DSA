@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 int countSubset(int arr[],int n,int sum){
     if(n==0)return (sum==0)?1:0;
