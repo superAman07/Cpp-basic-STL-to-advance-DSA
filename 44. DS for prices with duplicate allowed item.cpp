@@ -21,13 +21,13 @@ void sorted(){
     }
 }
 void printSmallerSort(int price){
-    // for(auto it=mp.begin();it!=mp.upper_bound(price);it++){
-    //     cout<<it->second<<" "<<it->first<<"\n";
-    // }
-    auto it1=mp.lower_bound(price);
-    for(auto it=mp.begin();it!=it1;it++){
+    for(auto it=mp.begin();it!=mp.upper_bound(price);it++){
         cout<<it->second<<" "<<it->first<<"\n";
     }
+    // auto it1=mp.lower_bound(price);
+    // for(auto it=mp.begin();it!=it1;it++){
+    //     cout<<it->second<<" "<<it->first<<"\n";
+    // }
 }
 void printGreaterSorted(int price){
     for(auto it=mp.find(price);it!=mp.end();it++){
