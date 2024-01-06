@@ -11,8 +11,8 @@ int main(){
     s.insert(15);
     s.insert(20);
     s.insert(30);
-    auto it=s.lower_bound(8);  // element isn't +nt it returns just greater element
-    // auto it=s.lower_bound(15);  //lowest element
+    // auto it=s.lower_bound(8);  // element isn't +nt it returns just greater element
+    auto it=s.lower_bound(15);  //lowest element
     // auto it=s.lower_bound(35);   // greatest of greater
     if(it!=s.end()){
         cout<<*it<<' ';
