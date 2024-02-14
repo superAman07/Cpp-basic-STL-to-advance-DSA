@@ -19,7 +19,7 @@
 //     return 0;
 // }
 
-// Efficient approach in O(n)
+// Efficient approach in O(n) time and O(n) space
 #include<iostream>
 using namespace std;
 int repeatedElem(int arr[], int n){
