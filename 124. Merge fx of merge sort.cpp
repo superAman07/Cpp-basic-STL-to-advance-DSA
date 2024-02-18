@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void MergeFunction(int arr[],int low,int mid,int high){
+void merge(int arr[],int low,int mid,int high){
     int n1 = mid - low + 1;
     int n2 = high - mid;
     int L[n1],R[n2];
@@ -31,6 +31,14 @@ void MergeFunction(int arr[],int low,int mid,int high){
         k++;
     }
 }
+void mergeSort(int arr[],int l,int r){
+    if(r>l){
+        int mid = l + (r-l)/2;
+        mergeSort(arr,l,mid);
+        mergeSort(arr,mid+1,r);
+        merge(arr,l,mid,r);
+    }
+}
 int main(){
     // int arr[]{10,15,20,11,30};
     // int arr[]{5,8,12,14,7};
@@ -39,7 +47,9 @@ int main(){
     int low = 0;
     int mid = 3;
     int high = 5;
-    MergeFunction(arr,low,mid,high);
+    // MergeFunction(arr,low,mid,high);
+    mergeSort(arr,low,high);
+    cout<<"Sorted array is: "<<endl;
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
