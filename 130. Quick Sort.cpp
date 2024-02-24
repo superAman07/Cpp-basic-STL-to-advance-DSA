@@ -17,8 +17,8 @@ int lPartition(int arr[],int l,int h){
 void quickSortL(int arr[],int l, int h){
     if(l<h){
         int p = lPartition(arr,l,h);
-        quickSort(arr,l,p-1);
-        quickSort(arr,p+1,h);
+        quickSortL(arr,l,p-1);
+        quickSortL(arr,p+1,h);
     }
 }
 int Hpartition(int arr[],int l ,int h){
