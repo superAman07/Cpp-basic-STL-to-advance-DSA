@@ -1,3 +1,4 @@
+//Better that nlog(n) by sort function
 #include<iostream>
 using namespace std;
 int lPartition(int arr[],int l,int h){
