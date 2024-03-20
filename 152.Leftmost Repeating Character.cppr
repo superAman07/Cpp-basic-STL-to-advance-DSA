@@ -1,0 +1,99 @@
+// To get its presence in string
+
+// #include<iostream>
+// #include<unordered_map>
+// using namespace std;
+// int leftmostRepeating(const string &s){
+//     int n = s.length();
+//     unordered_map<char,int>m;
+//     for(int i=0;i<n;i++){
+//         m[s[i]]++;
+//     }
+//     for(auto &it:m){
+//         if(it.second>1){
+//             return 1;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     // string s ="abccb";
+//     string s ="abcd";
+//     cout<<leftmostRepeating(s)<<endl;
+//     return 0;
+// }
+
+// To get the exact index  of first repeating character we can use a sliding  window approach.
+
+// #include<iostream> 
+// using namespace std;
+
+// const int CHAR = 256;
+// int leftmostRepeating(const string &s){
+//     int n = s.length(); 
+//     int count[CHAR] ={0};
+//     for(int i=0;i<n;i++){
+//         count[s[i]]++;
+//     }
+//     for(int i=0;i<n;i++){
+//         if(count[s[i]]>1){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     string s ="adbccb";
+//     // string s ="abcd";
+//     cout<<leftmostRepeating(s)<<endl;
+//     return 0;
+// }
+
+// Another efficient approach-1 in one traversal
+
+// #include<iostream> 
+// using namespace std;
+
+// const int CHAR = 256;
+// int leftmostRepeating(const string &s){
+//     int fIndex[CHAR];
+//     fill(fIndex,fIndex+CHAR,-1);
+//     int res = INT_MAX;
+//     for(int i=0;i<s.length();i++){
+//         int fi=fIndex[s[i]];
+//         if(fi==-1 || i<fi){
+//             fIndex[s[i]]=i;
+//         }else {
+//             res=min(res,fi);
+//         }
+//     }
+//     return (res==INT_MAX)?-1:res;
+// }
+// int main(){
+//     string s ="adbccb";
+//     // string s ="abcd";
+//     cout<<leftmostRepeating(s)<<endl;
+//     return 0;
+// }
+
+//Another approach-2 
+#include<iostream> 
+using namespace std;
+
+const int CHAR = 256;
+int leftmostRepeating(const string &s){
+    bool visited[CHAR];
+    fill(visited,visited+CHAR,false);
+    int res =-1;
+    for(int i=s.length()-1;i>=0;i--){
+        if(visited[s[i]])res=i;
+        else visited[s[i]]=true;
+    }
+    return res;
+}
+int main(){
+    string s ="adbccb";
+    // string s ="abcd";
+    cout<<leftmostRepeating(s)<<endl;
+    return 0;
+}
