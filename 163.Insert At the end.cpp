@@ -46,7 +46,7 @@ struct node{
 };
 node* insertAtEnd(node*head,int x){
      node* ptr=new node(x);
-     if(head==NULL){
+     if(head==NULL){    //if we don't do this it will throw segmentation fault
         head=ptr;
     }else{
         node * temp=head;
