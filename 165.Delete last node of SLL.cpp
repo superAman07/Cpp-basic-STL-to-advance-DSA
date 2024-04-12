@@ -9,6 +9,9 @@ struct node{
     }
 };
 node* deleteLastEle(node* &head){
+    if(head==NULL){
+        return NULL;
+    }
     if(head->next==NULL){
         delete(head);
         return NULL;
