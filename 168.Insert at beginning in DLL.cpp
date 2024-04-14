@@ -10,17 +10,26 @@ struct node{
         prev=NULL;
     }
 };
+// node* insertAtBegInDLL(node*&head,int data){
+//     node*ptr=new node(data);
+//     if(head==NULL){
+//         return ptr;
+//     }
+//     else{
+//         ptr->next=head;
+//         head->prev=ptr;
+//         head==ptr;
+//         return head;
+//     }
+// }
 node* insertAtBegInDLL(node*&head,int data){
     node*ptr=new node(data);
-    if(head==NULL){
-        return ptr;
-    }
-    else{
-        ptr->next=head;
+    ptr->next=head;
+    if(head!=NULL){
         head->prev=ptr;
-        head=ptr;
-        return head;
-    }
+    } 
+    head=ptr;
+    return head;
 }
 int main(){
     int data = 5;
