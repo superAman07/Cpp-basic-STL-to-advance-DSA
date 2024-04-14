@@ -12,6 +12,9 @@ struct node{
 };
 node* insertAtLastInDLL(node* &head,int data){
     node* ptr=new node(data);
+    if(head==NULL){
+        return ptr;
+    }
     node* temp=head;
     while(temp->next!=NULL){
         temp=temp->next;
