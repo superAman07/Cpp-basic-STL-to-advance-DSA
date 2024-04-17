@@ -16,13 +16,19 @@ node* DeleteLastEle(node* &head){
         delete head;
         return NULL;
     }
-    node* ptr=head;
-    while(ptr->next->next!=NULL){
-        ptr=ptr->next;
+    // node* ptr=head;
+    // while(ptr->next->next!=NULL){
+    //     ptr=ptr->next;
+    // }
+    // node*qtr=ptr->next;
+    // delete qtr;
+    // ptr->next=NULL;
+    node* curr=head;
+    while(curr->next!=NULL){
+        curr=curr->next;
     }
-    node*qtr=ptr->next;
-    delete qtr;
-    ptr->next=NULL;
+    curr->prev->next=NULL;
+    delete curr;
     return head;
 }
 int main(){
