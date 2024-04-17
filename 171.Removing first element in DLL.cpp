@@ -10,17 +10,30 @@ struct node{
         prev=NULL;
     }
 };
-node *RemoveFirstDLL(node* head){
-    if(head==NULL){
+// node *RemoveFirstDLL(node* head){
+//     if(head==NULL){
+//         return NULL;
+//     }
+//     node* ptr=head;
+//     ptr= ptr->next;
+//     if(ptr!=NULL){
+//         ptr->next->prev=NULL;
+//     }
+//     delete(head); 
+//     return ptr;
+// }
+node* RemoveFirstDLL(node*head){
+    if(head==NULL)return NULL;
+    if(head->next==NULL){
+        delete head;
         return NULL;
+    }else{
+        node*ptr=head;
+        head=head->next;
+        head->prev=NULL;
+        delete ptr;
+        return head;
     }
-    node* ptr=head;
-    ptr= ptr->next;
-    if(ptr!=NULL){
-        ptr->next->prev=NULL;
-    }
-    delete(head); 
-    return ptr;
 }
 int main(){
     node* head=new node(10);
