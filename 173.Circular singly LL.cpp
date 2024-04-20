@@ -9,11 +9,18 @@ struct node{
     }
 };
 void traverse(node* head){
+    if(head==NULL){
+        return;
+    }
     node*ptr=head;
     do{
         cout<<ptr->data<<" ";
         ptr=ptr->next;
     }while(ptr!=head);
+    // cout<<head->data<<" ";
+    // for(node* ptr=head->next;ptr!=head;ptr=ptr->next){
+    //     cout<<ptr->data<<" ";
+    // }
 }
 int main(){
     node* head= new node(10);
