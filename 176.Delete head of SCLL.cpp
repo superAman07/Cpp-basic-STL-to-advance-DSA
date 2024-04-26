@@ -8,17 +8,37 @@ struct node{
         next=NULL;
     }
 };
+// Naive function
+// node* deleteHead(node* head){
+//    if(head==NULL){
+//     return NULL;
+//    }
+// if(head->next==head){
+//     delete head;
+//     return NULL;
+//    } 
+//    node* ptr=head->next;
+//    while(ptr->next!=head){
+//     ptr=ptr->next;
+//    }
+//    ptr->next=head->next;
+//    delete head;
+//    head=ptr->next;
+//    return head;
+// }
+// efficient solution
 node* deleteHead(node* head){
    if(head==NULL){
     return NULL;
    } 
+   if(head->next==head){
+    delete head;
+    return NULL;
+   }  
+   head->data=head->next->data;
    node* ptr=head->next;
-   while(ptr->next!=head){
-    ptr=ptr->next;
-   }
-   ptr->next=head->next;
-   delete head;
-   head=ptr->next;
+   head->next=head->next->next;
+   delete ptr;
    return head;
 }
 int main(){
