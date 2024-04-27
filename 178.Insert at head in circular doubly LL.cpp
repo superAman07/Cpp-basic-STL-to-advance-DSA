@@ -10,7 +10,7 @@ struct node{
         prev=NULL;
     }
 };
-node* InsertAtHead(node* head,int x){
+node* InsertAtHeadAndInsertAtLast(node* head,int x){
     node* ptr=new node(x);
     if(head==NULL){
         ptr->next=ptr;
@@ -21,7 +21,7 @@ node* InsertAtHead(node* head,int x){
         ptr->prev=head->prev;
         head->prev->next=ptr;
         head->prev=ptr;
-        head=ptr;
+        head=ptr;// no need to do this when we do for last node deletion
         return head;
     }
 }
@@ -38,7 +38,7 @@ int main(){
     third->next=fourth;
     fourth->prev=third;
     fourth->next=head;
-    head=InsertAtHead(head,3);
+    head=InsertAtHeadAndInsertAtLast(head,3);
     node* ptr=head;
     do{
         cout<<ptr->data<<" ";
