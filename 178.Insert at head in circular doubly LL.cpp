@@ -13,6 +13,8 @@ struct node{
 node* InsertAtHead(node* head,int x){
     node* ptr=new node(x);
     if(head==NULL){
+        ptr->next=ptr;
+        ptr->prev=ptr;
         return ptr;
     }else{
         ptr->next=head;
