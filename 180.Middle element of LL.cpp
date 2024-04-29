@@ -8,9 +8,9 @@ struct node{
         next=NULL;
     }
 };
-int GetMiddle(node* head){
+void GetMiddle(node* head){
     if(head==NULL){
-        return 0;
+        return;
     }
     node* slow=head;
     node* fast=head;
@@ -18,7 +18,7 @@ int GetMiddle(node* head){
         slow=slow->next;
         fast=fast->next->next;
     }
-    return slow->data;
+    cout<< slow->data;
 }
 int main(){
     node*head=new node(10);
@@ -27,6 +27,6 @@ int main(){
     head->next->next->next=new node(40);
     head->next->next->next->next=new node(50);
     head->next->next->next->next->next=NULL;
-    cout<<GetMiddle(head);
+    GetMiddle(head);
     return 0;
 }
