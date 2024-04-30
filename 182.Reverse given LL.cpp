@@ -10,17 +10,30 @@ struct node{
         next=NULL;
     }
 };
-//Naive solution function
+//Naive solution function TC=>O(n) and AS=>O(n)
+// node* reverseLL(node* head){
+//     vector<int>v;
+//     for(node* curr=head;curr!=NULL;curr=curr->next){
+//         v.push_back(curr->data);
+//     } 
+//     for(node* curr=head;curr!=NULL;curr=curr->next){
+//         curr->data=v.back(); 
+//         v.pop_back();
+//     }
+//     return head;
+// }
+
+// Efficient solution (By changing links) TC=> O(n) and AS=>O(1)
 node* reverseLL(node* head){
-    vector<int>v;
-    for(node* curr=head;curr!=NULL;curr=curr->next){
-        v.push_back(curr->data);
-    } 
-    for(node* curr=head;curr!=NULL;curr=curr->next){
-        curr->data=v.back(); 
-        v.pop_back();
+    node* prev=NULL;
+    node* curr=head;
+    while(curr!=NULL){
+        node* next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
     }
-    return head;
+    return prev;
 }
 int main(){
     node* head=new node(10);
