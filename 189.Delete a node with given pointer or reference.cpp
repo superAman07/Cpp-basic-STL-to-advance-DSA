@@ -27,7 +27,7 @@ int main(){
   first->next=second;
   second->next=third;
   third->next=fourth;
-  fourth->next=NULL;
+//   fourth->next=NULL;
   node* ptr=head;
   cout<<"Before deletion: ";
   while(ptr!=NULL){
