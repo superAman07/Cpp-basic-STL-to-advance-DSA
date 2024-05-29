@@ -4,6 +4,7 @@ struct MyStack{
     int *arr;
     int capacity;
     int top;
+//parameterized constructor for stack
     MyStack(int c){
         capacity=c;
         arr=new int [capacity];
