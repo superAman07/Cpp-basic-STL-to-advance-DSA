@@ -4,22 +4,36 @@ struct MyStack{
     int *arr;
     int capacity;
     int top;
-//parameterized constructor for stack
     MyStack(int c){
         capacity=c;
         arr=new int [capacity];
         top=-1;
     }
     void push(int x){
+        if(top==capacity-1){
+            //stack overflow
+            cout<<"Stack overflow\n";
+            return;
+        }
         top++;
         arr[top]=x;
     }
     int pop(){
+        if(top==-1){
+            //stack underflow
+            cout<<"Stack underflow\n";
+            return -1;
+        }
         int res=arr[top];
         top--;
         return res;
     }
     int peek(){
+        if(top==-1){
+            //stack underflow
+            cout<<"Stack underflow\n";
+            return -1;
+        }
         return arr[top];
     }
     int size(){
