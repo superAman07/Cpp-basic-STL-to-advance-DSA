@@ -31,6 +31,7 @@ using namespace std;
 void span_effeciently(vector<int>&v){
     stack<int>s;
     s.push(0);
+     cout<<1<<" ";
     for(int i=0;i<v.size();i++){            // it looks like O(n^2) but it isn't
         while(!s.empty() && v[i]>=v[s.top()]){
             s.pop();
