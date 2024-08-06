@@ -1,52 +1,52 @@
-#include<bits/stdc++.h>
-using namespace std;
-void maximum_of_subarray(vector<int>&v,int &k){
-    for(int i=0;i<(k)&&(k<=7);i++,k++){
-        cout<<max(max(v[i],v[i+1]),v[i+2])<<" ";
-    }
-}
-int main(){
-    int k=3,x,n;
-    cout<<"#---->program for maximum of all subarray of size k=3<----#\n";
-    cout<<"Enter the  total no. of elements\n";
-    cin>>n;
-    vector<int>v;
-    for(int i=0;i<n;i++){
-        cin>>x;
-        v.push_back(x);
-    }
-    maximum_of_subarray(v,k);
-    return 0;
-}
+// naive solution
+// #include<iostream>
+// using namespace std;
+// void printMaxInAllSubarray(int arr[],int n,int k){
+//     for(int i=0;i<n-k+1;i++){
+//         int maxEle=arr[i];
+//         for(int j=i+1;j<i+k;j++){
+//             maxEle = max(maxEle,arr[j]);
+//         }
+//         cout<<maxEle<<" ";
+//     }
+// }
+// int main(){
+//     int n=7;
+//     int arr[]{10,8,5,12,15,7,6};
+//     int k=3;
+//     printMaxInAllSubarray(arr,n,k);
+//     return 0;
+// }
 
       // with the help of Dequeue
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<deque>
 using namespace std;
-void printMax(int arr[],int n,int k){
-    deque<int>dq;
+void PrintMaxInKsubArrays(int arr[],int n,int k){
+    deque<int>dq(k);
     for(int i=0;i<k;i++){
-        while(!dq.empty() && arr[i]>=arr[dq.back()]){
+        while(!dq.empty()&& arr[i]>=arr[dq.back()]){
             dq.pop_back();
         }
-        dq.push_back();
+        dq.push_back(i);
     }
-    for(int i=0;i<n;i++){
-        cout<<arr[dq.front()];
-        while(!dq.empty() && dq.front()<=n-k){
+    for(int i=k;i<n;i++){
+        cout<<arr[dq.front()]<<" ";
+        while(!dq.empty()&&dq.front()<=i-k){
             dq.pop_front();
         }
-        while(!dq.empty() && arr[i]>=arr[dq.back()]){
+        while(!dq.empty()&&arr[i]>=arr[dq.back()]){
             dq.pop_back();
         }
-        dq.push_back();
+        dq.push_back(i);
     }
-    cout<<arr[dq.front()]<<" ";
+    cout<<arr[dq.front()];
 }
 int main(){
     int n=7;
     int arr[]{10,8,5,12,15,7,6};
     int k=3;
-    printMax(arr,n,k);
+    PrintMaxInKsubArrays(arr,n,k);
     return 0;
 }
