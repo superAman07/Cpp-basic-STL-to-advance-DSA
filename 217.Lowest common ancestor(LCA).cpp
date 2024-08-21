@@ -11,7 +11,7 @@ struct node{
     }
 };
 bool findPath(node* root,vector<node*>v,int n){
-    if(root==NULL)return NULL;
+    if(root==NULL)return false;
     v.push_back(root);
     if(root->data==n)return true;
     if((root->left &&findPath(root->left,v,n))||(root->right&&findPath(root->right,v,n)))return true;
