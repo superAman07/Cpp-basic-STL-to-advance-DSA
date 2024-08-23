@@ -9,7 +9,8 @@ struct node{
         left=right=NULL;
     }
 };
-//for serialize the given binary tree
+//TC is theta(n) for both serialize and deserialize
+//for serialize the given binary tree 
 void serialize(node* root,vector<int>&serial){
     if(root==NULL){
         serial.push_back(-1);
