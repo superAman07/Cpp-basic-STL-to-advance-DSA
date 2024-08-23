@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 using namespace std;
 struct node{
     int key;
@@ -8,11 +9,27 @@ struct node{
         left=right=NULL;
     }
 };
+//recursive inorder traversal
 void inorder(node *root){
     if(root!=NULL){
         inorder(root->left);
         cout<<root->key<<" ";
         inorder(root->right);
+    }
+}
+//iterative inorder traversal
+void inorder_iterative(node *root){
+    stack<node*> s;
+    node* curr=root;
+    while(curr!=NULL|| !s.empty()){
+        while(curr!=NULL){
+            s.push(curr);
+            curr=curr->left;
+        }
+        curr=s.top();
+        s.pop();
+        cout<<curr->key<<" ";
+        curr=curr->right;
     }
 }
 void preorder(node *root){
