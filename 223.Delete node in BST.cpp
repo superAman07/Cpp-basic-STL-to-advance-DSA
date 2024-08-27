@@ -1,4 +1,4 @@
-//In O(h) time and O(h) space
+//In O(logn) time and O(h) space
 #include<iostream>
 #include<queue>
 using namespace std;
