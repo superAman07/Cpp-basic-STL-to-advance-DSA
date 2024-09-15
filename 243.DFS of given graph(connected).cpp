@@ -6,21 +6,21 @@ void addEdge(vector<int>adj[],int u,int v){
     adj[u].push_back(v);
     adj[v].push_back(u);
 }
-void DFS(vector<int>adj[],int s,bool checker[]){
-    checker[s]=true;
+void DFSRec(vector<int>adj[],int s,bool visited[]){
+    visited[s]=true;
     cout<<s;
     for(auto it:adj[s]){
-        if(checker[it]==false){
-            DFS(adj,it,checker);
+        if(visited[it]==false){
+            DFSRec(adj,it,visited);
         }
     }
 }
-void dfsOfGraph(vector<int> adj[],int V){   
-    bool checker[V];
-    for(int i=0;i<V;i++){
-        checker[i]=false;
+void DFS(vector<int> adj[],int v,int s){   
+    bool visited[v];
+    for(int i=0;i<v;i++){
+        visited[i]=false;
     }
-    DFS(adj,0,checker); 
+    DFSRec(adj,s,visited); 
 }
 void display(vector<int>adj[],int v){
     for(int i=0;i<v;i++){
@@ -32,6 +32,7 @@ void display(vector<int>adj[],int v){
 }
 int main(){
     int v=7;
+    int s=0;
     vector<int>adj[v];
     addEdge(adj,0,1);
     addEdge(adj,0,2);
@@ -43,6 +44,6 @@ int main(){
     cout<<"Before: ";
     display(adj,v);
     cout<<"DFS of given graph: ";
-    dfsOfGraph(adj,v);
+    DFS(adj,v,s);
     return 0;
 }
