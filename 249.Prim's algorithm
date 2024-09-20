@@ -1,0 +1,153 @@
+//TC O(V²)
+// #include <iostream>
+// #include <vector>
+// #include <climits>
+
+// using namespace std;
+
+// const int V = 5; // Number of vertices in the graph
+
+// int findMinVertex(vector<int>& key, vector<bool>& mstSet) {
+//     int minKey = INT_MAX;
+//     int minIndex = -1;
+
+//     // Search for the vertex with the minimum key value
+//     for (int v = 0; v < V; v++) {
+//         if (!mstSet[v] && key[v] < minKey) {
+//             minKey = key[v];
+//             minIndex = v;
+//         }
+//     }
+
+//     return minIndex;
+// }
+
+// void primMST(int graph[V][V]) {
+//     // Array to store constructed MST
+//     vector<int> parent(V);
+//     // Key values used to pick minimum weight edge
+//     vector<int> key(V, INT_MAX);
+//     // To represent set of vertices included in MST
+//     vector<bool> mstSet(V, false);
+
+//     // Initialize the key value of the first vertex to 0 to pick it first
+//     key[0] = 0;
+//     parent[0] = -1; // First node is the root of the MST
+
+//     // The MST will have V vertices
+//     for (int count = 0; count < V - 1; count++) {
+//         // Pick the minimum key vertex from the set of vertices not yet included in MST
+//         int u = findMinVertex(key, mstSet);
+
+//         // Add the picked vertex to the MST set
+//         mstSet[u] = true;
+
+//         // Update key value and parent index of the adjacent vertices of the picked vertex
+//         for (int v = 0; v < V; v++) {
+//             // Update the key only if graph[u][v] is smaller than key[v]
+//             if (graph[u][v] && !mstSet[v] && graph[u][v] < key[v]) {
+//                 parent[v] = u;
+//                 key[v] = graph[u][v];
+//             }
+//         }
+//     }
+
+//     // Print the constructed MST
+//     cout << "Edge \tWeight\n";
+//     int weight=0;
+//     for (int i = 1; i < V; i++) {
+//         cout << parent[i] << " - " << i << "\t" << graph[i][parent[i]] << "\n";
+//         weight+=graph[i][parent[i]];
+//     }
+//     cout<<"Total Weight:"<<weight;
+// }
+
+// int main() {
+//     // Adjacency matrix representation of the graph
+//     int graph[V][V] = {
+//         {0, 2, 0, 6, 0},
+//         {2, 0, 3, 8, 5},
+//         {0, 3, 0, 0, 7},
+//         {6, 8, 0, 0, 9},
+//         {0, 5, 7, 9, 0}
+//     };
+//     // Call the Prim's algorithm function
+//     primMST(graph);
+//     return 0;
+// }
+
+//TC:O(ElogV)
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <utility>  // for pair
+#include <climits>  // for INT_MAX
+
+using namespace std;
+
+typedef pair<int, int> Edge; // (weight, vertex)
+
+// Function to implement Prim's algorithm
+void primMST(int V, vector<vector<Edge>>& graph) {
+    // Priority queue to select the edge with the minimum weight
+    priority_queue<Edge, vector<Edge>, greater<Edge>> minHeap;
+
+    // To track the minimum cost to include each vertex in MST
+    vector<int> key(V, INT_MAX);
+    // To store the parent (or predecessor) of each vertex in MST
+    vector<int> parent(V, -1);
+    // To track which vertices are included in MST
+    vector<bool> inMST(V, false);
+
+    // Start from the vertex 0
+    key[0] = 0;
+    minHeap.push({0, 0});  // {weight, vertex}
+
+    while (!minHeap.empty()) {
+        // Extract the vertex with the minimum key value
+        int u = minHeap.top().second;
+        minHeap.pop();
+
+        inMST[u] = true;  // Include vertex `u` in the MST
+
+        // Explore all adjacent vertices of vertex `u`
+        for (auto& edge : graph[u]) {
+            int v = edge.second;  // Adjacent vertex
+            int weight = edge.first;  // Edge weight
+
+            // If `v` is not in MST and weight of (u, v) is smaller than the current key[v]
+            if (!inMST[v] && weight < key[v]) {
+                key[v] = weight;
+                parent[v] = u;
+                minHeap.push({key[v], v});  // Push updated vertex and weight
+            }
+        }
+    }
+
+    // Print the MST
+    cout << "Edge \tWeight\n";
+    for (int i = 1; i < V; ++i) {
+        cout << parent[i] << " - " << i << "\t" << key[i] << "\n";
+    }
+}
+
+int main() {
+    int V = 5;
+    vector<vector<Edge>> graph(V);
+    graph[0].push_back({2, 1});
+    graph[0].push_back({6, 3});
+    graph[1].push_back({2, 0});
+    graph[1].push_back({3, 2});
+    graph[1].push_back({8, 3});
+    graph[1].push_back({5, 4});
+    graph[2].push_back({3, 1});
+    graph[2].push_back({7, 4});
+    graph[3].push_back({6, 0});
+    graph[3].push_back({8, 1});
+    graph[3].push_back({9, 4});
+    graph[4].push_back({5, 1});
+    graph[4].push_back({7, 2});
+    graph[4].push_back({9, 3});
+    primMST(V, graph);
+    return 0;
+}
