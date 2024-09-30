@@ -1,4 +1,5 @@
 //Fibonacci number from TC e^n to linear (theta of n) using dynamic programming concept of memoizing...
+//Memoization is basically top-down approach
 #include<iostream>
 using namespace std;
 int memo[6]{-1,-1,-1,-1,-1,-1};
