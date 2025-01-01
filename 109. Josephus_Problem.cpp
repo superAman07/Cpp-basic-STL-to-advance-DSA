@@ -7,6 +7,6 @@ int Josephus(int n,int k){
     }
 }
 int main(){
-    cout<<Josephus(7,3);
+    cout<< Josephus(7,3);
     return 0;
 }
